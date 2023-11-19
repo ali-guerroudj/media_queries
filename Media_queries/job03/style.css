@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles pour chaque section */
+section {
+    background-color: #88c1d0;
+    margin-bottom: 20px; /* Espacement entre les sections */
+}
+
+/* Media Query pour aligner 4 flexbox côte à côte */
+@media screen and (min-width: 1680px) {
+    body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    section {
+        width: 23%; /* Pour laisser un petit espace entre les flexbox */
+    }
+}
+
+/* Media Query pour aligner 4 flexbox les unes en dessous des autres */
+@media screen and (min-width: 1280px) and (max-width: 1680px) {
+    body,.section1 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    section {
+        width: 48%; /* Pour laisser un petit espace entre les flexbox */
+    }
+}
+
+/* Media Query pour aligner 2 flexbox côte à côte au-dessus de 2 flexbox côte à côte */
+@media screen and (max-width: 1280px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    section {
+        width: 48%; /* Pour laisser un petit espace entre les flexbox */
+    }
+    
+    section:nth-child(odd) {
+        order: 1; /* Inverser l'ordre des sections impaires pour les aligner côte à côte */
+    }
+}
